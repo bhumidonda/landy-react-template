@@ -3,7 +3,7 @@ name: Build and Deploy React App
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Build Project
-        run: npm run build
+        run: npm run build -- --public-url /landy-react-template/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
